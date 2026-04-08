@@ -48,6 +48,17 @@ export const portfolioData = {
       githubUrl: "#"
     }
   ],
+  experience: [
+    {
+      id: 1,
+      company: "Zaalima Development",
+      role: "MERN Stack Web Developer Intern",
+      period: "Jan 2026 – Present",
+      duration: "3 Months",
+      description: "Working on modern web architectures using the MERN stack. Focused on building scalable backend APIs and high-performance React frontends for primary projects like CareerForge Pro.",
+      tags: ["React.js", "Express", "Node.js", "MongoDB", "Redux"]
+    }
+  ],
   education: {
     degrees: [
       {

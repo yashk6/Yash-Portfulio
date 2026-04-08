@@ -4,13 +4,14 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useScrollSpy } from './hooks/useScrollSpy';
 
 function App() {
-  const sections = ['home', 'about', 'skills', 'projects', 'education', 'contact'];
+  const sections = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'contact'];
   const activeSection = useScrollSpy(sections, 200);
 
   // Cursor glow effect
@@ -36,6 +37,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Experience />
         <Projects />
         <Education />
         <Contact />

@@ -6,7 +6,7 @@ const Footer = () => {
   const { personal } = portfolioData;
   const year = new Date().getFullYear();
 
-  const links = ['About', 'Skills', 'Projects', 'Education', 'Contact'];
+  const links = ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'];
 
   const scrollTo = (id) => {
     const el = document.getElementById(id.toLowerCase());

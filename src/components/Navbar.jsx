@@ -6,7 +6,7 @@ const Navbar = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const links = ['About', 'Skills', 'Projects', 'Education', 'Contact'];
+  const links = ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
