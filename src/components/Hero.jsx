@@ -83,7 +83,7 @@ const Hero = () => {
       <div className="scanline z-0" />
 
       {/* Content */}
-      <div className="container mx-auto px-6 max-w-6xl relative z-10 pt-28 pb-20">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10 pt-28 pb-32 sm:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left column */}
@@ -174,7 +174,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className="flex items-center gap-8 border-t border-white/5 pt-8"
+              className="flex justify-between sm:justify-start items-start sm:items-center gap-2 sm:gap-8 border-t border-white/5 pt-8"
             >
               {STATS.map((stat, i) => (
                 <div key={i} className="text-center">
@@ -250,7 +250,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
       >
         <span className="font-fira text-[11px] text-[#555] uppercase tracking-[0.2em]">Scroll</span>
         <div className="w-[1px] h-10 bg-gradient-to-b from-[#39FF14]/50 to-transparent" />

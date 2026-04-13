@@ -34,7 +34,7 @@ export const portfolioData = {
       description: "A full-featured finance dashboard with budget management, analytics, transaction tracking, and CSV/JSON export. Ghost black aesthetic with Tailwind CSS.",
       date: "Apr 2026",
       tags: ["React.js", "Tailwind CSS", "Analytics", "CSV Export"],
-      liveUrl: "https://yash-finance.vercel.app/dashboard",
+      liveUrl: "https://yash-finance-git-main-yashs-projects-083d382b.vercel.app/dashboard",
       githubUrl: "#"
     },
     {
@@ -45,6 +45,16 @@ export const portfolioData = {
       date: "Jul 2024",
       tags: ["JavaScript", "HTML5", "CSS3"],
       liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 4,
+      title: "Ai-Document-Intelligence",
+      featured: true,
+      description: "An AI-powered document intelligence application for processing and analyzing documents.",
+      date: "Apr 2026",
+      tags: ["AI", "React.js", "Document Processing"],
+      liveUrl: "https://ai-document-intelligence-eso7aqht6-yashs-projects-083d382b.vercel.app",
       githubUrl: "#"
     }
   ],

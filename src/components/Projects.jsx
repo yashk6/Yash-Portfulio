@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { ExternalLink, Github, Star, ArrowUpRight, Tag } from 'lucide-react';
 
@@ -10,7 +10,6 @@ const PROJECT_COLORS = [
 ];
 
 const ProjectCard = ({ project, index }) => {
-  const [hovered, setHovered] = useState(false);
   const color = PROJECT_COLORS[index % PROJECT_COLORS.length];
 
   return (
@@ -19,38 +18,36 @@ const ProjectCard = ({ project, index }) => {
         hidden: { y: 30, opacity: 0 },
         visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="relative glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2"
+      className="relative glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 lg:hover:shadow-2xl"
       style={{
-        border: hovered ? `1px solid ${color.border}` : '1px solid rgba(255,255,255,0.06)',
-        boxShadow: hovered ? `0 20px 60px ${color.bg}, 0 0 0 1px ${color.border}` : 'none',
+        '--color-border': color.border,
+        '--color-bg': color.bg,
+        '--color-accent': color.accent,
+        borderColor: 'rgba(255,255,255,0.06)'
       }}
     >
       {/* Top gradient bar */}
       <div
-        className="h-1 w-full transition-all duration-500"
-        style={{ background: hovered ? `linear-gradient(90deg, ${color.accent}, transparent)` : 'transparent' }}
+        className="h-1 w-full transition-all duration-500 opacity-0 group-hover:opacity-100"
+        style={{ background: `linear-gradient(90deg, ${color.accent}, transparent)` }}
       />
 
       {/* Mock preview area */}
       <div
-        className="relative h-44 overflow-hidden flex items-center justify-center transition-all duration-500"
-        style={{ background: hovered ? color.bg : 'rgba(255,255,255,0.02)' }}
+        className="relative h-44 overflow-hidden flex items-center justify-center transition-all duration-500 bg-[rgba(255,255,255,0.02)] group-hover:bg-[var(--color-bg)]"
       >
         {/* Abstract code lines decoration */}
         <div className="absolute inset-4 opacity-20">
           {Array.from({ length: 6 }).map((_, i) => (
             <div
               key={i}
-              className="h-2 rounded-full mb-2 transition-all duration-700"
+              className="h-2 rounded-full mb-2 transition-all duration-700 opacity-15 scale-x-75 group-hover:opacity-[calc(0.4+0.05*var(--i))] group-hover:scale-x-100"
               style={{
                 background: color.accent,
                 width: `${30 + ((i * 23) % 55)}%`,
-                opacity: hovered ? 0.4 + i * 0.05 : 0.15,
-                transform: hovered ? `scaleX(1)` : `scaleX(0.6)`,
                 transformOrigin: 'left',
                 transitionDelay: `${i * 50}ms`,
+                '--i': i
               }}
             />
           ))}
@@ -58,12 +55,8 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Big project number */}
         <span
-          className="font-bebas text-[7rem] leading-none select-none transition-all duration-500 relative z-10"
-          style={{
-            color: color.accent,
-            opacity: hovered ? 0.12 : 0.06,
-            transform: hovered ? 'scale(1.1)' : 'scale(1)',
-          }}
+          className="font-bebas text-[7rem] leading-none select-none transition-all duration-500 relative z-10 opacity-5 group-hover:opacity-[0.12] group-hover:scale-110"
+          style={{ color: color.accent }}
         >
           {String(index + 1).padStart(2, '0')}
         </span>
@@ -79,69 +72,65 @@ const ProjectCard = ({ project, index }) => {
         )}
 
         {/* Hover overlay links */}
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 flex items-center justify-center gap-4 z-20"
-              style={{ background: `linear-gradient(to top, ${color.bg}, rgba(7,7,7,0.5))` }}
+        <div
+          className="absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 z-20 transition-all duration-300 opacity-100 lg:opacity-0 lg:group-hover:opacity-100"
+          style={{ background: `linear-gradient(to top, ${color.bg}, rgba(7,7,7,0.5))` }}
+        >
+          {project.liveUrl !== '#' && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-outfit font-bold text-sm transition-all sm:translate-y-0 translate-y-2 lg:translate-y-4 lg:group-hover:translate-y-0"
+              style={{
+                background: color.accent,
+                color: '#070707',
+                boxShadow: `0 0 20px ${color.bg}`,
+              }}
             >
-              {project.liveUrl !== '#' && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-outfit font-bold text-sm transition-all"
-                  style={{
-                    background: color.accent,
-                    color: '#070707',
-                    boxShadow: `0 0 20px ${color.bg}`,
-                  }}
-                >
-                  Live Demo <ExternalLink size={14} />
-                </a>
-              )}
-              {project.githubUrl !== '#' && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-outfit font-bold text-sm border text-[#ececec] hover:text-white transition-all"
-                  style={{ borderColor: 'rgba(255,255,255,0.15)' }}
-                >
-                  <Github size={14} /> Code
-                </a>
-              )}
-            </motion.div>
+              Live Demo <ExternalLink size={14} />
+            </a>
           )}
-        </AnimatePresence>
+          {project.githubUrl !== '#' && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-outfit font-bold text-sm border text-[#ececec] hover:text-white transition-all sm:translate-y-0 translate-y-2 lg:translate-y-4 lg:group-hover:translate-y-0"
+              style={{ borderColor: 'rgba(255,255,255,0.15)' }}
+            >
+              <Github size={14} /> Code
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Content */}
       <div className="p-7 flex flex-col flex-grow">
-        <div className="flex items-start justify-between mb-3">
-          <div>
+        <div className="flex items-start justify-between mb-3 relative z-30">
+          <a
+             href={project.liveUrl !== '#' ? project.liveUrl : (project.githubUrl !== '#' ? project.githubUrl : '#')}
+             target="_blank"
+             rel="noreferrer"
+             className="block w-full"
+          >
             <div className="font-fira text-xs mb-1.5" style={{ color: color.accent, opacity: 0.7 }}>
               {project.date || 'Ongoing'}
             </div>
             <h3
-              className="font-outfit font-bold text-xl text-[#ececec] transition-colors duration-300"
-              style={{ color: hovered ? color.accent : '#ececec' }}
+              className="font-outfit font-bold text-xl text-[#ececec] transition-colors duration-300 group-hover:text-[var(--color-accent)]"
             >
               {project.title}
             </h3>
-          </div>
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0 mt-1"
-            style={{
-              background: hovered ? color.accent : 'rgba(255,255,255,0.05)',
-              color: hovered ? '#070707' : '#555',
-            }}
+          </a>
+          <a
+            href={project.liveUrl !== '#' ? project.liveUrl : (project.githubUrl !== '#' ? project.githubUrl : '#')}
+            target="_blank"
+            rel="noreferrer"
+            className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0 mt-1 bg-white/5 text-[#555] group-hover:bg-[var(--color-accent)] group-hover:text-black z-30"
           >
             <ArrowUpRight size={16} />
-          </div>
+          </a>
         </div>
 
         <p className="font-outfit text-sm text-[#666] leading-relaxed mb-6 flex-grow">
@@ -149,16 +138,11 @@ const ProjectCard = ({ project, index }) => {
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 relative z-30">
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="flex items-center gap-1 text-xs font-fira px-2.5 py-1 rounded-md transition-colors"
-              style={{
-                background: color.bg,
-                color: hovered ? color.accent : '#666',
-                border: `1px solid ${hovered ? color.border : 'transparent'}`,
-              }}
+              className="flex items-center gap-1 text-xs font-fira px-2.5 py-1 rounded-md transition-colors bg-[var(--color-bg)] text-[#666] border-transparent group-hover:text-[var(--color-accent)] group-hover:border-[var(--color-border)] border"
             >
               {tag}
             </span>
