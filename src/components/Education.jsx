@@ -121,9 +121,17 @@ const Education = () => {
                       <h4 className="font-outfit font-semibold text-[#ececec] group-hover:text-[#39FF14] transition-colors text-sm">
                         {cert.title}
                       </h4>
-                      <div className="flex items-center gap-1.5 mt-1">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-60" />
-                        <span className="font-fira text-xs text-[#555]">Certified</span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 mt-1">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-60" />
+                          <span className="font-fira text-xs text-[#555]">Certified</span>
+                        </div>
+                        {cert.credentialId && (
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-30" />
+                            <span className="font-fira text-xs text-[#444] truncate max-w-[150px]">ID: {cert.credentialId}</span>
+                          </div>
+                         )}
                       </div>
                     </div>
                   </div>

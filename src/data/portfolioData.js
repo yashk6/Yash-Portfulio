@@ -63,7 +63,7 @@ export const portfolioData = {
       id: 1,
       company: "Zaalima Development",
       role: "MERN Stack Web Developer Intern",
-      period: "Jan 2026 – Present",
+      period: "Jan 2026 – Apr 2026",
       duration: "3 Months",
       description: "Working on modern web architectures using the MERN stack. Focused on building scalable backend APIs and high-performance React frontends for primary projects like CareerForge Pro.",
       tags: ["React.js", "Express", "Node.js", "MongoDB", "Redux"]
@@ -108,6 +108,12 @@ export const portfolioData = {
         id: 3,
         title: "Python Programming",
         date: "Jul–Aug 2023"
+      },
+      {
+        id: 4,
+        title: "Web Development Training (Zaalima Development)",
+        date: "Apr 2026",
+        credentialId: "d540476e2b9517a485a"
       }
     ]
   }
