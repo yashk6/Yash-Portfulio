@@ -36,35 +36,45 @@ const ProjectCard = ({ project, index }) => {
       <div
         className="relative h-44 overflow-hidden flex items-center justify-center transition-all duration-500 bg-[rgba(255,255,255,0.02)] group-hover:bg-[var(--color-bg)]"
       >
-        {/* Abstract code lines decoration */}
-        <div className="absolute inset-4 opacity-20">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-2 rounded-full mb-2 transition-all duration-700 opacity-15 scale-x-75 group-hover:opacity-[calc(0.4+0.05*var(--i))] group-hover:scale-x-100"
-              style={{
-                background: color.accent,
-                width: `${30 + ((i * 23) % 55)}%`,
-                transformOrigin: 'left',
-                transitionDelay: `${i * 50}ms`,
-                '--i': i
-              }}
-            />
-          ))}
-        </div>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-all duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <>
+            {/* Abstract code lines decoration */}
+            <div className="absolute inset-4 opacity-20">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="h-2 rounded-full mb-2 transition-all duration-700 opacity-15 scale-x-75 group-hover:opacity-[calc(0.4+0.05*var(--i))] group-hover:scale-x-100"
+                  style={{
+                    background: color.accent,
+                    width: `${30 + ((i * 23) % 55)}%`,
+                    transformOrigin: 'left',
+                    transitionDelay: `${i * 50}ms`,
+                    '--i': i
+                  }}
+                />
+              ))}
+            </div>
 
-        {/* Big project number */}
-        <span
-          className="font-bebas text-[7rem] leading-none select-none transition-all duration-500 relative z-10 opacity-5 group-hover:opacity-[0.12] group-hover:scale-110"
-          style={{ color: color.accent }}
-        >
-          {String(index + 1).padStart(2, '0')}
-        </span>
+            {/* Big project number */}
+            <span
+              className="font-bebas text-[7rem] leading-none select-none transition-all duration-500 relative z-10 opacity-5 group-hover:opacity-[0.12] group-hover:scale-110"
+              style={{ color: color.accent }}
+            >
+              {String(index + 1).padStart(2, '0')}
+            </span>
+          </>
+        )}
 
         {/* Featured badge */}
         {project.featured && (
           <div
-            className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-outfit font-bold"
+            className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-outfit font-bold z-20"
             style={{ background: color.bg, border: `1px solid ${color.border}`, color: color.accent }}
           >
             <Star size={10} fill="currentColor" /> Featured
