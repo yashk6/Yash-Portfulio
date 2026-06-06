@@ -8,7 +8,7 @@ const Education = () => {
 
   return (
     <section id="education" className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-[var(--color-surface)]" />
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="orb orb-blue w-[450px] h-[450px] right-0 top-0 opacity-20" />
       <div className="orb orb-green w-[350px] h-[350px] -left-20 bottom-0 opacity-15" />
@@ -39,10 +39,10 @@ const Education = () => {
               transition={{ duration: 0.5 }}
               className="flex items-center gap-3 mb-10"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#39FF14]/10 border border-[#39FF14]/25 flex items-center justify-center text-[#39FF14]">
+              <div className="w-10 h-10 rounded-xl bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/25 flex items-center justify-center text-[var(--color-primary)]">
                 <GraduationCap size={20} />
               </div>
-              <h3 className="font-outfit font-bold text-xl text-[#ececec]">Academic Background</h3>
+              <h3 className="font-outfit font-bold text-xl text-[var(--color-text-main)]">Academic Background</h3>
             </motion.div>
 
             <div className="relative">
@@ -65,20 +65,20 @@ const Education = () => {
                     </div>
 
                     {/* Card */}
-                    <div className="glass-card rounded-2xl p-6 border border-white/06 group-hover:border-[#39FF14]/25 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(57,255,20,0.06)]">
+                    <div className="glass-card rounded-2xl p-6 border border-[var(--color-border)] group-hover:border-[var(--color-primary)]/25 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(57,255,20,0.06)]">
                       <div className="flex items-start justify-between mb-2">
                         <div>
                           <div className="flex items-center gap-2 mb-1">
                             <Calendar size={12} className="text-[#39FF14] opacity-60" />
-                            <span className="font-fira text-xs text-[#39FF14]/70">{degree.period}</span>
+                            <span className="font-fira text-xs text-[var(--color-primary)]/70">{degree.period}</span>
                           </div>
                           <h4 className="font-outfit font-bold text-lg text-[#ececec] group-hover:text-[#39FF14] transition-colors">
                             {degree.title}
                           </h4>
-                          <p className="font-outfit text-sm text-[#666] mt-0.5">{degree.institution}</p>
+                          <p className="font-outfit text-sm text-[var(--color-text-muted)] mt-0.5">{degree.institution}</p>
                         </div>
-                        <div className="shrink-0 px-3 py-1.5 rounded-lg bg-[#39FF14]/08 border border-[#39FF14]/20">
-                          <span className="font-fira text-xs text-[#39FF14]">{degree.score}</span>
+                        <div className="shrink-0 px-3 py-1.5 rounded-lg bg-[var(--color-primary)]/08 border border-[var(--color-primary)]/20">
+                          <span className="font-fira text-xs text-[var(--color-primary)]">{degree.score}</span>
                         </div>
                       </div>
                     </div>
@@ -111,10 +111,10 @@ const Education = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.12 }}
-                  className="glass-card rounded-2xl p-5 border border-white/06 flex items-center justify-between gap-4 hover:border-[#39FF14]/25 hover:translate-x-1 transition-all duration-300 group"
+                  className="glass-card rounded-2xl p-5 border border-[var(--color-border)] flex items-center justify-between gap-4 hover:border-[var(--color-primary)]/25 hover:translate-x-1 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#39FF14]/08 border border-[#39FF14]/20 flex items-center justify-center shrink-0 group-hover:bg-[#39FF14]/15 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--color-primary)]/08 border border-[var(--color-primary)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--color-primary)]/15 transition-colors">
                       <BookOpen size={16} className="text-[#39FF14]" />
                     </div>
                     <div>
@@ -124,19 +124,19 @@ const Education = () => {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 mt-1">
                         <div className="flex items-center gap-1.5">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-60" />
-                          <span className="font-fira text-xs text-[#555]">Certified</span>
+                          <span className="font-fira text-xs text-[var(--color-text-muted)]">Certified</span>
                         </div>
                         {cert.credentialId && (
                           <div className="flex items-center gap-1.5">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] opacity-30" />
-                            <span className="font-fira text-xs text-[#444] truncate max-w-[150px]">ID: {cert.credentialId}</span>
+                            <span className="font-fira text-xs text-[var(--color-text-dim)] truncate max-w-[150px]">ID: {cert.credentialId}</span>
                           </div>
                          )}
                       </div>
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="font-fira text-xs text-[#555] group-hover:text-[#39FF14]/60 transition-colors">
+                    <span className="font-fira text-xs text-[var(--color-text-muted)] group-hover:text-[var(--color-primary)]/60 transition-colors">
                       {cert.date}
                     </span>
                   </div>
@@ -150,10 +150,10 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 p-6 rounded-2xl border border-[#39FF14]/15 bg-[#39FF14]/05"
+              className="mt-8 p-6 rounded-2xl border border-[var(--color-primary)]/15 bg-[var(--color-primary)]/05"
             >
               <div className="font-fira text-xs text-[#39FF14]/70 mb-2 uppercase tracking-wider">// Fun Fact</div>
-              <p className="font-outfit text-sm text-[#888] leading-relaxed">
+              <p className="font-outfit text-sm text-[var(--color-text-muted)] leading-relaxed">
                 Self-taught in many areas beyond formal education — constantly upskilling through online platforms,
                 real-world projects, and building things that solve actual problems.
               </p>

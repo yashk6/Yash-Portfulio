@@ -66,7 +66,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden glass-card">
       {/* Ambient orbs */}
       <div className="orb orb-green w-[700px] h-[700px] -top-40 -left-60 opacity-60" />
       <div className="orb orb-blue w-[500px] h-[500px] top-20 right-0 opacity-50" />
@@ -93,17 +93,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#39FF14]/30 bg-[#39FF14]/05 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/05 mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-[#39FF14] animate-pulse-neon" />
-              <span className="font-fira text-[#39FF14] text-sm">{personal.status}</span>
+              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse-neon" />
+              <span className="font-fira text-[var(--color-primary)] text-sm">{personal.status}</span>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-fira text-[#39FF14]/70 text-base mb-3"
+              className="font-fira text-[var(--color-primary)]/70 text-base mb-3"
             >
               &gt; Hello, World! I'm
             </motion.div>
@@ -116,7 +116,7 @@ const Hero = () => {
               style={{ fontSize: 'clamp(60px, 9vw, 110px)' }}
             >
               {personal.name.split(' ').map((word, i) => (
-                <span key={i} className={i === 1 ? 'text-[#39FF14] neon-text' : ''}>
+                <span key={i} className={i === 1 ? 'text-[var(--color-primary)] neon-text' : ''}>
                   {word}{' '}
                 </span>
               ))}
@@ -129,15 +129,15 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex items-center gap-2 mb-6 text-xl sm:text-2xl font-outfit font-light text-[#ececec]/80"
             >
-              <span className="text-[#39FF14] font-semibold">{typewrittenText}</span>
-              <span className="cursor-blink text-[#39FF14] font-light">|</span>
+              <span className="text-[var(--color-primary)] font-semibold">{typewrittenText}</span>
+              <span className="cursor-blink text-[var(--color-primary)] font-light">|</span>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-[#777] font-outfit text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
+              className="text-[var(--color-text-muted)] font-outfit text-base sm:text-lg max-w-xl mb-10 leading-relaxed"
             >
               {personal.bio.slice(0, 160)}…
             </motion.p>
@@ -151,7 +151,7 @@ const Hero = () => {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center gap-2 bg-[#39FF14] text-[#070707] font-outfit font-bold px-8 py-4 rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(57,255,20,0.5)]"
+                className="group relative inline-flex items-center gap-2 bg-[var(--color-primary)] text-[var(--color-text-main)] font-outfit font-bold px-8 py-4 rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(57,255,20,0.5)]"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   View My Work <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -163,7 +163,7 @@ const Hero = () => {
                 href={personal.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-white/10 text-[#ececec] font-outfit font-semibold px-8 py-4 rounded-lg hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all hover:bg-[#39FF14]/05"
+                className="inline-flex items-center gap-2 border border-white/10 text-[var(--color-text-main)] font-outfit font-semibold px-8 py-4 rounded-lg hover:border-[var(--color-primary)]/50 hover:text-[var(--color-primary)] transition-all hover:bg-[var(--color-primary)]/05"
               >
                 <Linkedin size={18} /> LinkedIn
               </a>
@@ -178,10 +178,10 @@ const Hero = () => {
             >
               {STATS.map((stat, i) => (
                 <div key={i} className="text-center">
-                  <div className="font-bebas text-[#39FF14] neon-text" style={{ fontSize: '2rem' }}>
+                  <div className="font-bebas text-[var(--color-primary)] neon-text" style={{ fontSize: '2rem' }}>
                     {stat.value}
                   </div>
-                  <div className="font-outfit text-xs text-[#555] uppercase tracking-widest">
+                  <div className="font-outfit text-xs text-[var(--color-text-muted)] uppercase tracking-widest">
                     {stat.label}
                   </div>
                 </div>
@@ -198,8 +198,8 @@ const Hero = () => {
           >
             <div className="relative">
               {/* Spinning orbit ring */}
-              <div className="absolute inset-0 rounded-full border border-[#39FF14]/15 animate-spin-slow scale-110" />
-              <div className="absolute inset-0 rounded-full border border-[#39FF14]/08 scale-125" style={{ animation: 'spin-slow 30s linear infinite reverse' }} />
+              <div className="absolute inset-0 rounded-full border border-[var(--color-primary)]/15 animate-spin-slow scale-110" />
+              <div className="absolute inset-0 rounded-full border border-[var(--color-primary)]/08 scale-125" style={{ animation: 'spin-slow 30s linear infinite reverse' }} />
 
               {/* Avatar */}
               <div className="w-72 h-72 rounded-full gradient-border relative overflow-hidden shadow-[0_0_60px_rgba(57,255,20,0.2)]">
@@ -216,28 +216,28 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-8 glass-card px-4 py-2 rounded-xl border border-[#39FF14]/20 flex items-center gap-2"
+                className="absolute -top-4 -right-8 glass-card px-4 py-2 rounded-xl border border-[var(--color-primary)]/20 flex items-center gap-2"
               >
-                <span className="text-[#39FF14]">⚡</span>
-                <span className="font-fira text-xs text-[#ececec]">React.js</span>
+                <span className="text-[var(--color-primary)]">⚡</span>
+                <span className="font-fira text-xs text-[var(--color-text-main)]">React.js</span>
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -left-8 glass-card px-4 py-2 rounded-xl border border-[#39FF14]/20 flex items-center gap-2"
+                className="absolute -bottom-4 -left-8 glass-card px-4 py-2 rounded-xl border border-[var(--color-primary)]/20 flex items-center gap-2"
               >
-                <span className="text-[#39FF14]">🚀</span>
-                <span className="font-fira text-xs text-[#ececec]">Open to Work</span>
+                <span className="text-[var(--color-primary)]">🚀</span>
+                <span className="font-fira text-xs text-[var(--color-text-main)]">Open to Work</span>
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute top-1/2 -right-16 glass-card px-4 py-2 rounded-xl border border-[#39FF14]/20 flex items-center gap-2"
+                className="absolute top-1/2 -right-16 glass-card px-4 py-2 rounded-xl border border-[var(--color-primary)]/20 flex items-center gap-2"
               >
-                <span className="text-[#39FF14]">🎯</span>
-                <span className="font-fira text-xs text-[#ececec]">Frontend</span>
+                <span className="text-[var(--color-primary)]">🎯</span>
+                <span className="font-fira text-xs text-[var(--color-text-main)]">Frontend</span>
               </motion.div>
             </div>
           </motion.div>
@@ -252,8 +252,8 @@ const Hero = () => {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
       >
-        <span className="font-fira text-[11px] text-[#555] uppercase tracking-[0.2em]">Scroll</span>
-        <div className="w-[1px] h-10 bg-gradient-to-b from-[#39FF14]/50 to-transparent" />
+        <span className="font-fira text-[11px] text-[var(--color-text-muted)] uppercase tracking-[0.2em]">Scroll</span>
+        <div className="w-[1px] h-10 bg-gradient-to-b from-[var(--color-primary)]/50 to-transparent" />
       </motion.div>
     </section>
   );

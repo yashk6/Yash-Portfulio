@@ -29,8 +29,8 @@ const About = () => {
           className="mb-5"
         >
           <div className="section-label mb-4">About Me</div>
-          <h2 className="font-bebas text-white leading-none" style={{ fontSize: 'clamp(40px, 6vw, 68px)' }}>
-            The Developer <span className="text-[#39FF14]">Behind</span> the Code
+          <h2 className="font-bebas text-[var(--color-text-main)] leading-none" style={{ fontSize: 'clamp(40px, 6vw, 68px)' }}>
+            The Developer <span className="text-[var(--color-primary)]">Behind</span> the Code
           </h2>
         </motion.div>
 
@@ -44,11 +44,11 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-3 space-y-8"
           >
-            <p className="font-outfit text-lg text-[#888] leading-relaxed">
+            <p className="font-outfit text-lg text-[var(--color-text-muted)] leading-relaxed">
               {personal.bio}
             </p>
 
-            <p className="font-outfit text-base text-[#666] leading-relaxed">
+            <p className="font-outfit text-base text-[var(--color-text-muted)] leading-relaxed">
               When I'm not writing code, I'm exploring new frontend patterns, contributing to open-source, and diving deeper into the React ecosystem. I believe in clean, performant code and pixel-perfect design.
             </p>
 
@@ -61,14 +61,14 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                  className="flex items-center gap-3 p-4 glass-card rounded-xl border border-white/5 hover:border-[#39FF14]/25 transition-all group"
+                  className="flex items-center gap-3 p-4 glass-card rounded-xl border border-[var(--color-border)] hover:border-[var(--color-primary)]/25 transition-all group"
                 >
-                  <div className="text-[#39FF14] shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                  <div className="text-[var(--color-primary)] shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
                     {h.icon}
                   </div>
                   <div>
-                    <div className="text-xs font-fira text-[#555] uppercase tracking-wider">{h.label}</div>
-                    <div className="text-sm font-outfit text-[#ccc] mt-0.5">{h.value}</div>
+                    <div className="flex items-center gap-2 text-[var(--color-text-muted)] text-xs uppercase tracking-wider mb-0.5">{h.label}</div>
+                    <div className="text-sm font-outfit text-[var(--color-text-main)] mt-0.5">{h.value}</div>
                   </div>
                 </motion.div>
               ))}
@@ -83,7 +83,7 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }}
-                  className="px-4 py-1.5 rounded-full text-sm font-outfit font-medium text-[#ececec] border border-white/10 bg-white/03 hover:border-[#39FF14]/40 hover:text-[#39FF14] transition-all cursor-default"
+                  className="px-4 py-1.5 rounded-full text-sm font-outfit font-medium text-[var(--color-text-muted)] border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-primary)]/40 hover:text-[var(--color-primary)] transition-all cursor-default"
                 >
                   {fact}
                 </motion.div>
