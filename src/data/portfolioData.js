@@ -12,7 +12,7 @@ export const portfolioData = {
   },
   skills: {
     languages: ["JavaScript", "Node.js", "Python", "HTML5/CSS3"],
-    frameworks: ["React.js", "Angular", "Express.js", "Sequelize", "Tailwind CSS"],
+    frameworks: ["React.js", "Next.js", "Angular", "Express.js", "Sequelize", "Tailwind CSS"],
     tools: ["Git", "GitHub", "VS Code", "Chrome DevTools"],
     other: ["MERN Stack Development", "REST API Design", "Database Management (SQLite/MongoDB)", "Responsive UI/UX"]
   },
