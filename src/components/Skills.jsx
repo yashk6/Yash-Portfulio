@@ -19,6 +19,7 @@ const SKILL_LEVELS = {
   'REST API Integration': 80,
   'Firebase Auth': 70,
   'UI/UX Fundamentals': 75,
+  'Next.js': 88,
 };
 
 const TECH_LOGOS = [
@@ -32,6 +33,7 @@ const TECH_LOGOS = [
   { name: 'GitHub', emoji: '🐙' },
   { name: 'Tailwind', emoji: '💨' },
   { name: 'Vite', emoji: '⚡' },
+      { name: 'Next.js', emoji: '⏭️' },
   { name: 'Firebase', emoji: '🔥' },
   { name: 'Figma', emoji: '🎨' },
 ];
