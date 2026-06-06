@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Background from './components/Background';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -30,6 +31,7 @@ function App() {
     <div className="bg-[#070707] min-h-screen text-[#ececec] font-outfit overflow-x-hidden">
       {/* Cursor glow */}
       <div id="cursor-glow" />
+      <Background />
 
       <Navbar activeSection={activeSection} />
 
