@@ -1,0 +1,94 @@
+.account-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  min-height: 780px;
+}
+
+.account-header {
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-header-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e53935;
+  background: #fdecea;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: opacity 0.2s;
+}
+.logout-btn:hover { opacity: 0.8; }
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 24px 20px;
+  background: #f7f7f7;
+}
+
+.avatar-wrapper { position: relative; flex-shrink: 0; }
+
+.avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-btn {
+  position: absolute;
+  bottom: 0;
+  right: -2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #6C2BD9;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.camera-btn:hover { opacity: 0.85; }
+
+.profile-info { display: flex; flex-direction: column; gap: 4px; }
+.profile-name  { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+.profile-email { font-size: 13px; color: #666; }
+
+.divider {
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right, #d0d0d0 0px, #d0d0d0 6px, transparent 6px, transparent 12px
+  );
+}
+
+.bio-section { padding: 20px 24px; }
+
+.bio-text {
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.65;
+}

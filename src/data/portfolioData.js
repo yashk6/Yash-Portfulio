@@ -60,7 +60,18 @@ export const portfolioData = {
       liveUrl: "https://ai-document-intelligence-eso7aqht6-yashs-projects-083d382b.vercel.app",
       githubUrl: "https://github.com/yashk6/AI-Document-Intelligence",
       image: "/projects/ai_document_intelligence.png"
-    }
+    },
+    {
+      id: 6,
+      title: "PopX Login",
+      featured: false,
+      description: "PopX is a mobile UI assignment built using React 18 and Vite. It consists of four screens — Welcome, Login, Create Account, and Account Settings — connected using React Router DOM v6 for smooth navigation. The UI follows a mobile‑first design (375px) with a purple color theme (#6c25ff), floating label inputs, and a login button that activates only when both fields are filled. All styling is done in plain CSS without any framework.",
+      date: "7 June 2026",
+      tags: ["React", "Vite", "React Router DOM", "CSS", "Mobile UI"],
+      liveUrl: "https://pop-x-assignment-nine-black.vercel.app/",
+      githubUrl: "https://github.com/yashk6/PopX-Assignment",
+      image: "/projects/popx.png"
+    },
   ],
   experience: [
     {
